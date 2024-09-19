@@ -1,27 +1,26 @@
 {
   "app": {
     "title": {
-      "en": "Crystalball",
-      "es": "Bola de cristal",
-      "pt": "Bola de cristal"
-    },
+      "en": "The Neckar",
+      "de": "Der Neckar",
+      "es": "Río Neckar"
+      },
     "tagline": {
-      "en": "open-source mapkit",
-      "es": "mapeo a código abierto",
-      "pt": "mapeamento de código aberto"
-    },
-    "projectWebsite": "https://wiki.timetochange.today",
-    "defaultLanguage": "en",
+      "en": "Pasts & Futures",
+      "es": "Pasados y Futuros",
+      "de": "Vergangenheit und Zukunft"
+      },
+    "projectWebsite": "",
     "color": {
-      "primary": "#00000e",
-      "secondary": "#7C2CA3"
+      "primary": "#382a8c",
+      "secondary": "#2a8c38"
     },
     "font": {
-      "url": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
-      "family": "Roboto"
+      "url": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap",
+      "family": "Merriweather"
     },
     "legend": {
-      "isVisible": true
+      "isVisible": false
     },
     "controls": {
       "locate_me": true,
@@ -30,8 +29,8 @@
     },
     "sideBar": {
       "isVisible": true,
-      "backgroundColor": "#f5efe9",
-      "textColor": "black"
+      "backgroundColor": "#376950",
+      "textColor": "white"
     },
     "navbar": {
       "dropdownMenu": false
@@ -40,18 +39,155 @@
   },
   "map": {
     "projectionCode": "EPSG:3857",
-    "minZoom": 1,
-    "maxZoom": 21,
+    "minZoom": 0.5,
+    "maxZoom": 20,
     "zoom": 1,
     "geoserverWorkspace": "workspace1",
     "resolutions": [
-      156543.03, 78271.52, 39135.76, 19567.88, 9783.94, 4891.97, 2445.98, 1222.99, 611.5, 305.75, 152.87, 76.437,
-      38.219, 19.109, 9.5546, 4.7773, 2.3887, 1.1943, 0.5972
+      156543.03,
+      78271.52,
+      39135.76,
+      19567.88,
+      9783.94,
+      4891.97,
+      2445.98,
+      1222.99,
+      611.5,
+      305.75,
+      152.87,
+      76.437,
+      38.219,
+      19.109,
+      9.5546,
+      4.7773,
+      2.3887,
+      1.1943,
+      0.5972,
+      0.299,
+      0.149
     ],
-    "center": [0, 0],
+    "center": [
+      0,
+      0
+    ],
     "minResolution": 0.25,
     "maxResolution": 64000,
     "layers": [
+      {
+        "type": "XYZ",
+        "name": "osm_bright",
+        "group": "neckar",
+        "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm:osm_vashon@EPSG%3A900913@png/{z}/{x}/{-y}.png",
+        "minResolution": 0.1,
+        "maxResolution": 64000,
+        "zIndex": 1000,
+        "displayInLegend": true,
+        "legendDisplayName": "Open Street Map",
+        "opacity": 0.89,
+        "visible": false
+      },
+      {
+        "type": "GROUP",
+        "name": "neckar_watershed",
+        "minResolution": 0.5,
+        "maxResolution": 60000,
+        "displayInLegend": true,
+        "legendDisplayName": "Neckar Watershed",
+        "visible": true,
+        "displaySidebarInfo": false,
+        "group": "neckar",
+        "layers": [
+          {
+            "type": "XYZ",
+            "name": "neckartiles",
+            "group": "neckar",
+            "url": "https://neckar-fluss.s3.eu-north-1.amazonaws.com/assets/tiles/neckartiles/{z}/{x}/{y}.png",
+            "minResolution": 0.5,
+            "maxResolution": 64000,
+            "displayInLegend": true,
+            "legendDisplayName": "Neckar Watershed",
+            "opacity": 0.99,
+            "queryable": false,
+            "visible": true
+          },
+          {
+            "type": "XYZ",
+            "name": "water_neckar",
+            "group": "neckar",
+            "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm:water_neckar@EPSG%3A900913@png/{z}/{x}/{-y}.png",
+            "minResolution": 0.1,
+            "maxResolution": 64000,
+            "legendDisplayName": "Waterways",
+            "opacity": 0.89,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "type": "XYZ",
+        "name": "circle_tiles",
+        "group": "neckar",
+        "url": "https://neckar-fluss.s3.eu-north-1.amazonaws.com/assets/tiles/circle_tiles/{z}/{x}/{y}.png",
+        "minResolution": 0.25,
+        "maxResolution": 80,
+        "displayInLegend": true,
+        "legendDisplayName": "Stuttgart Area",
+        "opacity": 0.99,
+        "queryable": false,
+        "visible": true
+      },
+      {
+        "type": "XYZ",
+        "name": "labels",
+        "group": "neckar",
+        "url": "https://api.mapbox.com/styles/v1/bkholmes/cknyrpfv51m8d18o580evho4m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmtob2xtZXMiLCJhIjoiNjlkYjI4MDUyYTRlZWEyYzkwYTdmOTgxNmMzOGYwMTUifQ.VSUo52PYOUzS60NR6jqXTw",
+        "minResolution": 0.5,
+        "maxResolution": 3800,
+        "displayInLegend": true,
+        "legendDisplayName": "Street Map",
+        "legendIcon": "https://bigmudddy.s3.us-east-2.amazonaws.com/assets/icons/streetmap.png",
+        "visible": false,
+        "opacity": 0.79,
+        "queryable": false
+      },
+      {
+        "type": "XYZ",
+        "name": "global_rivers",
+        "group": "neckar",
+        "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm:global_rivers@EPSG%3A900913@png/{z}/{x}/{-y}.png",
+        "minResolution": 0.1,
+        "maxResolution": 64000,
+        "displayInLegend": true,
+        "legendDisplayName": "Rivers",
+        "opacity": 0.89,
+        "visible": false
+      },
+      {
+        "type": "XYZ",
+        "name": "carto_dark",
+        "group": "neckar",
+        "url": "https://{a-d}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
+        "minResolution": 0.25,
+        "maxResolution": 68000,
+        "displayInLegend": true,
+        "legendDisplayName": "Dark background",
+        "opacity": 0.99,
+        "queryable": false,
+        "visible": false
+      },
+      {
+        "type": "XYZ",
+        "name": "ESRI-World-Imagery",
+        "group": "neckar",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        "minResolution": 0.1,
+        "maxResolution": 68000,
+        "displayInLegend": true,
+        "legendDisplayName": "Satellite Image",
+        "opacity": 0.9,
+        "queryable": false,
+        "visible": false
+      },
       {
         "type": "VECTOR",
         "name": "points",
@@ -62,11 +198,11 @@
         "legendDisplayName": {
           "en": "Points",
           "es": "Puntos",
-          "pt": "Pontos"
+          "de": "Punkte"
         },
         "visible": true,
         "displayInLegend": true,
-        "displaySidebarInfo": true,
+        "displaySidebarInfo": false,
         "zIndex": 1000,
         "minResolution": 0,
         "maxResolution": 64000,
@@ -78,40 +214,11 @@
           "radius": 8,
           "strokeWidth": 2,
           "stylePropFnRef": {
-            "strokeColor": "variable1",
-            "fillColor": "variable2"
+            "strokeColor": "strokeColor",
+            "fillColor": "fillColor"
           },
           "hoverTextColor": "white",
           "hoverBackgroundColor": "#000000"
-        }
-      },
-      {
-        "type": "VECTOR",
-        "name": "puntos_wewac",
-        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:puntos_wewac&outputFormat=application/json&srsname=EPSG:3857",
-        "group": "media",
-        "queryable": true,
-        "format": "GeoJSON",
-        "legendDisplayName": {
-          "en": "Points Wewac",
-          "es": "Puntos Wewac",
-          "pt": "Pontos Wewac"
-        },
-        "visible": true,
-        "displayInLegend": true,
-        "displaySidebarInfo": true,
-        "zIndex": 1000,
-        "minResolution": 0,
-        "maxResolution": 64000,
-        "label": true,
-        "hoverable": true,
-        "legendIcon": "",
-        "style": {
-          "type": "circle",
-          "radius": 5,
-          "strokeWidth": 1,
-          "strokeColor": "#000000",
-          "fillColor": "red"
         }
       },
       {
@@ -123,7 +230,7 @@
         "legendDisplayName": {
           "en": "Lines",
           "es": "Líneas",
-          "pt": "Linhas"
+          "de": "Linien"
         },
         "format": "GeoJSON",
         "visible": true,
@@ -138,8 +245,8 @@
         "style": {
           "type": "line",
           "stylePropFnRef": {
-            "strokeColor": "variable1",
-            "strokeWidth": "variable2"
+            "strokeColor": "strokeColor",
+            "strokeWidth": "strokeWidth"
           },
           "hoverTextColor": "white",
           "hoverBackgroundColor": "#000000"
@@ -159,7 +266,7 @@
         "legendDisplayName": {
           "en": "Polygons",
           "es": "Polígonos",
-          "pt": "Polígonos"
+          "de": "Vielecken"
         },
         "zIndex": 1000,
         "minResolution": 1,
@@ -171,10 +278,10 @@
           "hoverTextColor": "white",
           "hoverBackgroundColor": "#000000",
           "stylePropFnRef": {
-            "strokeColor": "variable1",
+            "strokeColor": "strokeWidth",
             "fillColor": "variable2"
           },
-          "strokeWidth": 3
+          "strokeWidth": 2
         }
       },
       {
@@ -188,7 +295,7 @@
         "legendDisplayName": {
           "en": "Photos",
           "es": "Fotografías",
-          "pt": "Fotos"
+          "de": "Fotos"
         },
         "format": "GeoJSON",
         "visible": true,
@@ -206,37 +313,6 @@
       },
       {
         "type": "VECTOR",
-        "name": "colaboradores",
-        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:colaboradores&outputFormat=application/json&srsname=EPSG:3857",
-        "group": "media",
-        "queryable": true,
-        "format": "GeoJSON",
-        "legendDisplayName": {
-          "en": "HsF",
-          "es": "HsF",
-          "pt": "HsF"
-        },
-        "visible": true,
-        "displayInLegend": true,
-        "displaySidebarInfo": true,
-        "zIndex": 1000,
-        "minResolution": 0,
-        "maxResolution": 64000,
-        "label": true,
-        "hoverable": true,
-        "legendIcon": "",
-        "style": {
-          "type": "circle",
-          "radius": 6,
-          "strokeWidth": 1,
-          "strokeColor": "black",
-          "fillColor": "purple",
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "#000000"
-        }
-      },
-      {
-        "type": "VECTOR",
         "name": "videos",
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:videos&outputFormat=application/json&srsname=EPSG:3857",
         "group": "media",
@@ -246,7 +322,7 @@
         "legendDisplayName": {
           "en": "Videos",
           "es": "Vídeos",
-          "pt": "Vídeos"
+          "de": "Video"
         },
         "format": "GeoJSON",
         "visible": true,
@@ -261,1019 +337,54 @@
           "hoverTextColor": "white",
           "hoverBackgroundColor": "#000000"
         }
-      },
-      {
-        "type": "VECTOR",
-        "name": "mississippi",
-        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:mississippi&outputFormat=application/json&srsname=EPSG:3857",
-        "group": "media",
-        "queryable": false,
-        "legendDisplayName": "Lines",
-        "format": "GeoJSON",
-        "visible": true,
-        "displayInLegend": true,
-        "zIndex": 1000,
-        "minResolution": 2446,
-        "maxResolution": 64000,
-        "label": false,
-        "hoverable": true,
-        "style": {
-          "type": "line",
-          "strokeColor": "#40a3c9",
-          "strokeWidth": 1.5,
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "#000000"
-        }
-      },
-      {
-        "type": "XYZ",
-        "name": "osm",
-        "group": "media",
-        "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm:osm_bright@EPSG%3A900913@png/{z}/{x}/{-y}.png",
-        "minResolution": 0.25,
-        "maxResolution": 64000,
-        "queryable": false,
-        "displayInLegend": true,
-        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/osm.png",
-        "legendDisplayName": {
-          "en": "OpenStreetMap",
-          "es": "OpenStreetMap",
-          "pt": "OpenStreetMap"
-        },
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "osm2",
-        "group": "media",
-        "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm_bright@EPSG%3A900913@png/{z}/{x}/{-y}.png",
-        "minResolution": 0.25,
-        "maxResolution": 64000,
-        "queryable": false,
-        "displayInLegend": false,
-        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/osm.png",
-        "legendDisplayName": {
-          "en": "OpenStreetMap",
-          "es": "OpenStreetMap",
-          "pt": "OpenStreetMap"
-        },
-        "visible": true
-      },
-      {
-        "type": "VECTORTILE",
-        "name": "glri_projects",
-        "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:glri_projects@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-        "group": "data",
-        "queryable": true,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Restoration projects",
-          "es": "Proyectos de restauro",
-          "pt": "Proyectos de restauro"
-        },
-        "format": "MVT",
-        "renderMode": "hybrid",
-        "visible": true,
-        "zIndex": 100,
-        "minResolution": 1,
-        "maxResolution": 64000,
-        "hoverable": true,
-        "style": {
-          "type": "circle",
-          "stylePropFnRef": {
-            "fillColor": "variable2",
-            "fillColorFn": "colorMapStyle",
-            "fillColorMap": "hsv",
-            "radius": "variable2"
-          }
-        }
-      },
-      {
-        "type": "VECTOR",
-        "name": "Rosario",
-        "url": "https://map.casariolab.art/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:puerto_rosario&outputFormat=application/json&srsname=EPSG:3857",
-        "queryable": true,
-        "isInteractive": true,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Soybean exports",
-          "es": "Exportación de soja",
-          "pt": "Exportação de soja"
-        },
-        "format": "GeoJSON",
-        "visible": true,
-        "displaySidebarInfo": false,
-        "zIndex": 1,
-        "minResolution": 2,
-        "maxResolution": 64000,
-        "label": false,
-        "hoverable": true,
-        "style": {
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "#000000",
-          "type": "line",
-          "stylePropFnRef": {
-            "strokeWidth": "variable1"
-          },
-          "strokeColor": "#7c2ca3"
-        }
-      },
-      {
-        "type": "GROUP",
-        "name": "wateruse",
-        "minResolution": 1,
-        "maxResolution": 68000,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Groundwater use",
-          "de": "Wassernutzung",
-          "es": "Uso del agua"
-        },
-        "legendIcon": "",
-        "visible": false,
-        "displaySidebarInfo": true,
-        "group": "media",
-        "attributions": "",
-        "displaySeries": true,
-        "largeSlider": true,
-        "defaultSeriesLayerIndex": 0,
-        "playInterval": "5000",
-        "layers": [
-          {
-            "type": "GROUP",
-            "name": "1990",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1990",
-              "es": "1990",
-              "de": "1990"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1990",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1990@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1990",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1990",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1990@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1991",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1991",
-              "es": "1991",
-              "de": "1991"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1991",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1991@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1991",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1991",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1991@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1992",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1992",
-              "es": "1992",
-              "de": "1992"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1992",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1992@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1992",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1992",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1992@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1993",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1993",
-              "es": "1993",
-              "de": "1993"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1993",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1993@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1993",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1993",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1993@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1994",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1994",
-              "es": "1994",
-              "de": "1994"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1994",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1994@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1994",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1994",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1994@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1995",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1995",
-              "es": "1995",
-              "de": "1995"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1995",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1995@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1995",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1995",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1995@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1996",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1996",
-              "es": "1996",
-              "de": "1996"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1996",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1996@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1996",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1996",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1996@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1997",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1997",
-              "es": "1997",
-              "de": "1997"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1997",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1997@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1997",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1997",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1997@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1998",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1998",
-              "es": "1998",
-              "de": "1998"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1998",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1998@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1998",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1998",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1998@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "1999",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "1999",
-              "es": "1999",
-              "de": "1999"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_1999",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_1999@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_1999",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_1999",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_1999@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "type": "GROUP",
-            "name": "2000",
-            "visible": true,
-            "legendDisplayName": {
-              "en": "2000",
-              "es": "2000",
-              "de": "2000"
-            },
-            "layers": [
-              {
-                "type": "VECTORTILE",
-                "name": "counties_2000",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:counties_2000@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 90,
-                "maxResolution": 64000,
-                "hoverable": true,
-                "style": {
-                  "stylePropFnRef": {
-                    "fillColor": "af_irr_2000",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "portland"
-                  },
-                  "strokeColor": "lightgray",
-                  "strokeWidth": 2
-                }
-              },
-              {
-                "type": "VECTORTILE",
-                "name": "groundwater_2000",
-                "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:groundwater_2000@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-                "queryable": true,
-                "format": "MVT",
-                "renderMode": "hybrid",
-                "visible": true,
-                "zIndex": 1000,
-                "opacity": 0.7,
-                "minResolution": 0.25,
-                "maxResolution": 800,
-                "hoverable": true,
-                "style": {
-                  "hoverTextColor": "white",
-                  "hoverBackgroundColor": "black",
-                  "type": "circle",
-                  "strokeColor": "white",
-                  "strokeWidth": 0.5,
-                  "stylePropFnRef": {
-                    "radius": "variable1",
-                    "fillColor": "variable1",
-                    "fillColorFn": "colorMapStyle",
-                    "fillColorMap": "cool"
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "VECTORTILE",
-        "name": "burnables",
-        "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:burnables3@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf",
-        "group": "data",
-        "queryable": true,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Global Power",
-          "es": "Poder global",
-          "pt": "Poder global"
-        },
-        "format": "MVT",
-        "renderMode": "hybrid",
-        "visible": true,
-        "zIndex": 100,
-        "minResolution": 1,
-        "maxResolution": 64000,
-        "hoverable": true,
-        "style": {
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "black",
-          "type": "circle",
-          "stylePropFnRef": {
-            "radius": "variable2",
-            "fillColor": "variable2",
-            "fillColorFn": "colorMapStyle",
-            "fillColorMap": "jet"
-          },
-          "strokeColor": "#ffffff",
-          "strokeWidth": 0.4
-        }
-      },
-      {
-        "type": "XYZ",
-        "name": "satellite_image",
-        "group": "media",
-        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 0.25,
-        "maxResolution": 64000,
-        "queryable": false,
-        "displayInLegend": true,
-        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/satellite.png",
-        "legendDisplayName": {
-          "en": "Satellite image",
-          "es": "Imagen satélital",
-          "pt": "Imagem de satélite"
-        },
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "ESRI-World-Imagery",
-        "group": "backgroundLayers",
-        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 0.25,
-        "maxResolution": 64000,
-        "opacity": 1,
-        "queryable": false,
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "ESRI-World-Imagery2",
-        "group": "backgroundLayers",
-        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 0.25,
-        "maxResolution": 10,
-        "zIndex": 100,
-        "opacity": 1,
-        "queryable": false,
-        "displayInLegend": true,
-        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/satellite.png",
-        "legendDisplayName": {
-          "en": "Spotlight",
-          "es": "Foco satélital",
-          "pt": "Foco satelital"
-        },
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "ESRI-World-Imagery3",
-        "group": "data",
-        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 0.25,
-        "maxResolution": 2,
-        "opacity": 1,
-        "queryable": false,
-        "displayInLegend": true,
-        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/satellite.png",
-        "legendDisplayName": {
-          "en": "Spotlight",
-          "es": "Foco satélital",
-          "pt": "Foco satelital"
-        },
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "World_Hillshade",
-        "group": "backgroundLayers",
-        "url": "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 4,
-        "maxResolution": 64000,
-        "queryable": false,
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "World_Physical",
-        "group": "backgroundLayers",
-        "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 800,
-        "maxResolution": 64000,
-        "opacity": 0.6,
-        "queryable": false,
-        "visible": true
-      },
-      {
-        "type": "XYZ",
-        "name": "carto_dark",
-        "group": "backgroundLayers",
-        "url": "https://{a-d}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-        "minResolution": 0.25,
-        "maxResolution": 64000,
-        "opacity": 1,
-        "queryable": false,
-        "visible": true
       }
     ],
     "groups": {
-      "media": {
+      "neckar": {
         "default": {
           "layers": [
-            "osm",
-            "mississippi",
-            "polygons",
-            "ESRI-World-Imagery2",
-            "wateruse",
+            "ESRI-World-Imagery",
+            "carto_dark",
+            "global_rivers",
+            "neckar_watershed",
+            "circle_tiles",
+            "osm_bright",
             "points",
             "lines",
-            "videos",
+            "polygons",
             "photos",
-            "puntos_wewac"
+            "videos"
           ],
-          "center": [-87.473, 41.658],
-          "resolution": 32,
-          "mobileResolution": 120,
-          "mobileCenter": [-87.5, 41.663],
-          "minResolution": 0,
+          "center": [
+            9.207,
+            48.802
+          ],
+          "resolution": 3.5,
+          "mobileCenter": [
+            9.190,
+            48.796
+          ],
+          "mobileResolution": 600,
+          "minResolution": 0.1,
           "maxResolution": 64000
         },
         "local": {
-          "layers": ["ESRI-World-Imagery"],
-          "center": [-88.179, 41.837],
+          "layers": [],
+          "center": [
+            -88.179,
+            41.837
+          ],
           "resolution": 2000,
           "mobileResolution": 16000,
           "minResolution": 0,
           "maxResolution": 64000
         },
         "global": {
-          "layers": ["osm2", "Rosario", "colaboradores"],
-          "center": [-12.42, 29.84],
-          "resolution": 68000,
-          "mobileResolution": 80000,
-          "minResolution": 0,
-          "maxResolution": 64000
-        }
-      },
-      "data": {
-        "default": {
-          "layers": ["carto_dark", "ESRI-World-Imagery2", "glri_projects"],
-          "center": [-84.75, 43.561],
-          "resolution": 860,
-          "mobileResolution": 4000,
-          "mobileCenter": [26.041, -4.828],
-          "minResolution": 0,
-          "maxResolution": 64000
-        },
-        "local": {
-          "layers": ["osm", "burnables"],
-          "center": [-88.179, 41.837],
-          "resolution": 2000,
-          "mobileResolution": 16000,
-          "minResolution": 0,
-          "maxResolution": 64000
-        },
-        "global": {
-          "layers": ["carto_dark", "ESRI-World-Imagery2", "burnables"],
-          "center": [-12.42, 29.84],
+          "layers": [],
+          "center": [
+            -12.42,
+            29.84
+          ],
           "resolution": 68000,
           "mobileResolution": 80000,
           "minResolution": 0,
@@ -1284,32 +395,21 @@
     "flyToSlideshow": {
       "delayInSecondsForInitialStart": 9000000,
       "delayInSecondsBetweenFrames": 120000,
-      "maplinks": [""]
+      "maplinks": [
+        ""
+      ]
     },
-    "defaultActiveGroup": "media",
+    "defaultActiveGroup": "neckar",
     "groupTitles": {
-      "media": {
-        "en": "Media",
-        "es": "Medios",
-        "pt": "Mídia"
-      },
-      "data": {
-        "en": "Data",
-        "es": "Datos",
-        "pt": "Datos"
+      "neckar": {
+        "en": "Urbanized Watershed",
+        "es": "Cuenca Urbanizada",
+        "de": "Urbanisierte Wasserscheide"
       }
     },
     "regionTitles": {
-      "local": {
-        "en": "local",
-        "es": "entorno",
-        "pt": "entorno"
-      },
-      "global": {
-        "en": "global",
-        "es": "mundo",
-        "pt": "mundo"
-      },
+      "local": "local",
+      "global": "global",
       "default": "Default"
     },
     "popupFieldsMapping": {
@@ -1325,6 +425,9 @@
       "caption",
       "variable1",
       "variable2",
+      "strokeWidth",
+      "strokeColor",
+      "fillColor",
       "imageUrl",
       "sidebarMediaTop",
       "sidebarMediaBottom",
@@ -1332,10 +435,7 @@
       "videoSrc",
       "colorkey",
       "latitude",
-      "longitude",
-      "port",
-      "soybean_importer",
-      "translations"
+      "longitude"
     ],
     "corporateEntitiesUrls": {
       "Enbridge": ""

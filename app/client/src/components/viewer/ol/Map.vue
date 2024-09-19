@@ -48,6 +48,7 @@
     >
       <add-post :color="color.primary" :map="map"></add-post>
     </div>
+    <!-- uncomment for spotlight message
     <div
       v-show="spotlightMessage === true && !$vuetify.breakpoint.smAndDown && !isEditingPost"
       :style="`background-color: ${color.primary}`"
@@ -55,7 +56,7 @@
       ref="spotlightControls"
     >
       {{ $t('tooltip.changeSpotlight') }}
-    </div>
+    </div>   -->
 
     <!-- Popup overlay  -->
     <overlay-popup

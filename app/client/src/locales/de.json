@@ -1,0 +1,233 @@
+{
+  "general": {
+    "save": "Speichern Sie",
+    "close": "Schließen Sie",
+    "cancel": "Abbrechen",
+    "ok": "OK",
+    "yes": "Ja",
+    "no": "Nein",
+    "delete": "Löschen",
+    "logIn": "Einloggen",
+    "logOut": "Abmelden",
+    "register": "Register",
+    "search": "Suche",
+    "copy": "Kopieren",
+    "layers": "Schichten",
+    "sidebar": "Seitenleiste",
+    "top": "Top",
+    "bottom": "Unten",
+    "back": "Zurück",
+    "confirm": "Bestätigen Sie",
+    "confirmDelete": "Bestätigen Löschen",
+    "edit": "bearbeiten",
+    "zoom": "Vergrößern",
+    "updateSuccess": "Erfolgreich aktualisiert!",
+    "update": "Update",
+    "apply": "Bewerbung",
+    "fileSizeExceeds": "Dateigröße überschreitet",
+    "group": "Gruppe",
+    "replaceAndDelete": "Ersetzen und Löschen",
+    "warning": "Warnung",
+    "map": "Karte"
+  },
+  "tooltip": {
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Herauszoomen",
+    "toggleFullScreen": "Vollbildschirm umschalten",
+    "shareMap": "Karte teilen",
+    "locateMe": "Finden Sie mich",
+    "edit": "bearbeiten",
+    "addFeature": "Merkmal hinzufügen",
+    "modifyGeometry": "Ändern von Form und Position",
+    "modifyAttributes": "Attribute modifizieren",
+    "deleteFeature": "Merkmal löschen",
+    "addPost": "Beitrag hinzufügen",
+    "changeSpotlight": "Drücken Sie ↑ oder ↓, um die Größe des Scheinwerfers zu ändern.",
+    "translateAllFeatures": "Alle Funktionen übersetzen"
+  },
+  "form": {
+    "user": {
+      "username": "Benutzername",
+      "password": "Passwort",
+      "confirmPassword": "Bestätigen Sie Ihr Passwort",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "role": "Rolle",
+      "roles": "Rollen",
+      "action": "Aktion"
+    },
+    "shareMap": {
+      "title": "Link zur Karte",
+      "shareableLink": "Karte freigebender Link",
+      "alertInfo": "Kopieren Sie den Link und fügen Sie ihn ein, um einen genauen Standort auf der Karte zu teilen."
+    },
+    "locateMe": {
+      "zoomToLocation": "Auf meinen Standort zoomen",
+      "shareMyLocation": "Meinen Standort teilen"
+    },
+    "legend": {
+      "selectAll": "Alle auswählen",
+      "clearAll": "Alle löschen"
+    },
+    "edit": {
+      "selectLayerToEdit": "Ebene zur Bearbeitung auswählen",
+      "closeEdit": "Bearbeiten schließen",
+      "selectLayer": "Ebene auswählen",
+      "editAttributes": "Attribute bearbeiten",
+      "addAttributes": "Attribute hinzufügen",
+      "confirmDeleteFeature": "Sind Sie sicher, dass Sie das ausgewählte Merkmal löschen möchten?",
+      "lightBoxImagesPanel": "LightBox Bilder Panel",
+      "uploadImage": "jpg oder png Bild hochladen",
+      "deleteTooltip": "Klicken Sie auf das zu löschende Merkmal. \nDrücken Sie ESC zum Beenden.",
+      "selectTooltip": "Klicken Sie auf , um ein Merkmal auszuwählen. \nDrücken Sie ESC zum Beenden.",
+      "editTooltip": "Klicken Sie auf das Merkmal und ziehen Sie es, um es zu verschieben. \nDrücken Sie ESC zum Beenden.",
+      "modifyAttributesTooltip": "Klicken Sie auf das Merkmal, um die Attribute zu ändern. \nDrücken Sie ESC zum Beenden.",
+      "polygonAndLineStartTooltip": "Klicken Sie, um mit dem Zeichnen zu beginnen. \nDrücken Sie ESC zum Beenden.",
+      "polygonAndLineContinueTooltip": "Klicken Sie, um mit dem Zeichnen fortzufahren. \nDrücken Sie ESC zum Beenden.",
+      "polygonAndLineCloseTooltip": "Klicken Sie, um einen weiteren Punkt hinzuzufügen (Doppelklick zum Abschluss) \nDrücken Sie ESC zum Beenden.",
+      "pointStartTooltip": "Klicken Sie, um den Punkt zu setzen. \nDrücken Sie ESC zum Beenden.",
+      "modifyAttributesSuccess": "Funktion erfolgreich aktualisiert!",
+      "deleteFeatureSuccess": "Funktion erfolgreich gelöscht!",
+      "addFeatureSuccess": "Funktion erfolgreich hinzugefügt!",
+      "modifyFeatureSuccess": "Funktion erfolgreich geändert!"
+    },
+    "lightbox": {
+      "title": "LightBox-Bilder",
+      "deleteImage": "Bild löschen",
+      "imageUrl": "Bild-URL",
+      "clickToUploadImage": "Zum Hochladen eines Bildes klicken",
+      "imageCaption": "Bildunterschrift",
+      "imageUploadSuccess": "Bild erfolgreich hochgeladen!",
+      "imageUploadFailed": "Bild kann nicht hochgeladen werden"
+    },
+    "htmlPostEditor": {
+      "update": "Beitrag erfolgreich aktualisiert!",
+      "insert": "Beitrag erfolgreich hinzugefügt!",
+      "delete": "Beitrag erfolgreich gelöscht!",
+      "deletePost": "Beitrag löschen",
+      "editPost": "Beitrag bearbeiten",
+      "corporateNetwork": "Unternehmensnetzwerk",
+      "placeholder": "Etwas schreiben",
+      "alignLeft": "Links ausrichten",
+      "alignCenter": "Zentrum ausrichten",
+      "alignRight": "Rechts ausrichten",
+      "addImage": "Bild hinzufügen",
+      "addVideo": "Video hinzufügen",
+      "addAudio": "Audio hinzufügen",
+      "addExpansionPanel": "Erweiterungspanel hinzufügen",
+      "addMapViewLink": "Link zur aktuellen Karte hinzufügen",
+      "translateContent": "Inhalt übersetzen in ",
+      "expansionTitle": "Erweiterung Titel",
+      "imageInsert": "Bild einfügen",
+      "videoInsert": "Video einfügen",
+      "audioInsert": "Audio einfügen",
+      "fileUpload": "Datei hochgeladen. Klicken Sie auf Anwenden, um sie einzufügen!",
+      "clickToUpload": "Zum Hochladen klicken",
+      "addPostSnackbar": "Zoomen Sie nahe heran, um Ihren Beitrag hinzuzufügen.",
+      "addPostWarning": "Sie haben ungespeicherte Änderungen! Sind Sie sicher, dass Sie fortfahren möchten?"
+    }
+  },
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "user": "Benutzer",
+    "assets": "Vermögenswerte",
+    "settings": "Einstellungen",
+    "adminDashboard": "Verwaltungs-Dashboard",
+    "newIcon": "Neue Ikone",
+    "postIcon": "Pfosten-Symbol",
+    "iconUrl": "Symbol-URL",
+    "navbarGroup": "Navbar-Gruppe",
+    "icon": "Icon",
+    "iconTitle": "Icon Titel",
+    "action": "Aktion",
+    "deleteIconConfirm": "Das ausgewählte Symbol löschen ?",
+    "iconDeleteSuccess": "Icon erfolgreich gelöscht!",
+    "iconDeleteFailed": "Symbol kann nicht gelöscht werden",
+    "updateIcon": "Update-Symbol",
+    "dashboardComponent": "Dashboard-Komponente",
+    "iconExists": "Icon URL existiert bereits in der Tabelle!",
+    "postWillUpdated": "Alle Beiträge, die das vorherige Symbol enthalten, werden aktualisiert!",
+    "clickToClear": "Zum Löschen anklicken",
+    "clickToUploadIcon": "Klicken Sie zum Hochladen auf das Symbol",
+    "iconTitlePlaceholder": "Titel des Symbols (geben Sie ein leeres Feld ein, wenn Sie keinen Titel eingeben)",
+    "iconUploadedSuccess": "Icon erfolgreich hochgeladen!",
+    "iconUpdatedSuccess": "Icon erfolgreich aktualisiert!",
+    "iconAddedSuccess": "Icon erfolgreich hinzugefügt!",
+    "iconUpdateFailed": "Symbol kann nicht aktualisiert werden",
+    "iconAddFailed": "Symbol kann nicht hinzugefügt werden",
+    "iconUploadedFailed": "Symbol kann nicht hochgeladen werden",
+    "navbarGroups": "Navbar-Gruppe",
+    "updatePostsAndDeleteIcon": "Vorhandene Beiträge aktualisieren und Symbol löschen",
+    "updateIconForPosts": "Es gibt Beiträge, die das ausgewählte Symbol als Referenz haben. Bitte wählen Sie ein neues Symbol, um die vorhandenen Beiträge zu aktualisieren, bevor Sie sie löschen!",
+    "iconToDelete": "Symbol zum Löschen",
+    "iconToUpdatePosts": "Symbol zur Aktualisierung bestehender Beiträge",
+    "postIconsUpdatedSuccess": "Beitragssymbole erfolgreich aktualisiert!",
+    "cantReplaceIcons": "Kann die Post-Icons nicht ersetzen",
+    "usersList": "Benutzerliste",
+    "newUser": "Neuer Benutzer",
+    "updateUser": "Benutzer aktualisieren",
+    "manageRoles": "Rollen verwalten",
+    "managePermissions": "Berechtigungen verwalten",
+    "noRole": "Keine Rolle",
+    "editUserProfile": "Benutzerprofil bearbeiten",
+    "changePassword": "Passwort ändern",
+    "deleteUser": "Benutzer löschen",
+    "userDeletedSuccess": "Benutzer erfolgreich gelöscht!",
+    "userDeletedFailed": "Benutzer kann nicht gelöscht werden",
+    "userCreatedSuccess": "Benutzer erfolgreich angelegt!",
+    "userCreatedFailed": "Benutzer kann nicht erstellt werden",
+    "userUpdatedSuccess": "Benutzer erfolgreich aktualisiert!",
+    "userUpdatedFailed": "Benutzer kann nicht aktualisiert werden",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Neues Passwort bestätigen",
+    "passwordNotMatch": "Passwörter müssen übereinstimmen",
+    "passwordUpdatedSuccess": "Passwort erfolgreich aktualisiert!",
+    "passwordUpdatedFailed": "Passwort kann nicht aktualisiert werden"
+  },
+  "$vuetify": {
+    "close": "Schließen Sie",
+    "dataIterator": {
+      "pageText": "{0}-{1} von {2}",
+      "noResultsText": "Keine passenden Datensätze gefunden",
+      "loadingText": "Artikel laden..."
+    },
+    "dataTable": {
+      "itemsPerPageText": "Zeilen pro Seite:",
+      "ariaLabel": {
+        "sortDescending": ": Absteigend sortiert. Aktivieren Sie diese Option, um die Sortierung aufzuheben.",
+        "sortAscending": ": Aufsteigend sortiert. Aktivieren Sie, um absteigend zu sortieren.",
+        "sortNone": ": Nicht sortiert. Aktivieren Sie, um aufsteigend zu sortieren."
+      }
+    },
+    "dataFooter": {
+      "pageText": "{0}-{1} von {2}",
+      "itemsPerPageText": "Artikel pro Seite:",
+      "itemsPerPageAll": "Alle",
+      "nextPage": "Nächste Seite",
+      "prevPage": "Vorherige Seite",
+      "firstPage": "Erste Seite",
+      "lastPage": "Letzte Seite"
+    },
+    "datePicker": {
+      "itemsSelected": "{0} ausgewählt"
+    },
+    "noDataText": "Keine Daten verfügbar",
+    "carousel": {
+      "prev": "Vorheriges Bildmaterial",
+      "next": "Nächstes Bild"
+    },
+    "calendar": {
+      "moreEvents": "{0} mehr"
+    },
+    "timePicker": {
+      "am": "AM",
+      "pm": "PM"
+    }
+  },
+  "translation": {
+    "translateLoadingText": "Übersetzen...",
+    "translateAllFeaturesSuccess": "Erfolgreich übersetzt",
+    "translateAllFeaturesError": "Fehler beim Übersetzen"
+  }
+}

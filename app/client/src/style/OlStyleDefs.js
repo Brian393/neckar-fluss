@@ -650,68 +650,6 @@ export const layersStylePropFn = {
     radius: propertyValue => getRadiusValue(propertyValue),
     iconUrl: propertyValue => propertyValue,
   },
-  glri_projects: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.012, 2, 26),
-  },
-  glri_projects2: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.012, 2, 26),
-  },
-  colaboradores: {
-    fillColor: propertyValue => propertyValue,
-  },
-  groundwater_1990: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1991: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1992: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1993: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1994: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1995: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1996: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1997: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1998: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_1999: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  groundwater_2000: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.4, 3, 40),
-  },
-  coal_ash: {
-    fillColor: propertyValue => propertyValue,
-  },
-  burnables: {
-    fillColor: propertyValue => propertyValue,
-    radius: propertyValue => getRadiusValue(propertyValue, 0.2, 3, 26),
-  },
   polygons: {
     strokeColor: propertyValue => propertyValue,
     fillColor: propertyValue => propertyValue,
@@ -723,8 +661,5 @@ export const layersStylePropFn = {
   lines: {
     strokeColor: propertyValue => propertyValue,
     strokeWidth: propertyValue => propertyValue,
-  },
-  Rosario: {
-    strokeWidth: propertyValue => propertyValue / 100000,
   },
 };
