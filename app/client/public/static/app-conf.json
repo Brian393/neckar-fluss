@@ -257,7 +257,7 @@
           "hoverBackgroundColor": "#000000",
           "stylePropFnRef": {
             "strokeColor": "strokeWidth",
-            "fillColor": "variable2"
+            "fillColor": "fillColor"
           },
           "strokeWidth": 2
         }
