@@ -57,7 +57,7 @@ const state = {
     format: 'GeoJSON',
     visible: true,
     zIndex: 1000,
-    minResolution: 0.5,
+    minResolution: 0.1,
     maxResolution: 64000,
     label: null,
     hoverable: true,
