@@ -39,8 +39,8 @@
   },
   "map": {
     "projectionCode": "EPSG:3857",
-    "minZoom": 0.5,
-    "maxZoom": 20,
+    "minZoom": 1,
+    "maxZoom": 19,
     "zoom": 1,
     "geoserverWorkspace": "workspace1",
     "resolutions": [
@@ -55,14 +55,27 @@
         "type": "XYZ",
         "name": "osm_bright",
         "group": "neckar",
-        "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm:osm_vashon@EPSG%3A900913@png/{z}/{x}/{-y}.png",
-        "minResolution": 0.1,
+        "url": "https://neckar-fluss.s3.eu-north-1.amazonaws.com/assets/tiles/osm_bright/{z}/{x}/{y}.png",
+        "minResolution": 0.25,
         "maxResolution": 64000,
         "zIndex": 1000,
         "displayInLegend": true,
         "legendDisplayName": "Open Street Map",
         "opacity": 0.89,
         "visible": false
+      },
+      {
+        "type": "XYZ",
+        "name": "carto_light",
+        "group": "neckar",
+        "url": "https://{a-d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        "minResolution": 0.25,
+        "maxResolution": 64000,
+        "zIndex": 1000,
+        "displayInLegend": true,
+        "legendDisplayName": "CartoDB Positron",
+        "opacity": 1,
+        "visible": true
       },
       {
         "type": "GROUP",
@@ -116,42 +129,16 @@
       },
       {
         "type": "XYZ",
-        "name": "labels",
+        "name": "spotlight",
         "group": "neckar",
-        "url": "https://api.mapbox.com/styles/v1/bkholmes/cknyrpfv51m8d18o580evho4m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmtob2xtZXMiLCJhIjoiNjlkYjI4MDUyYTRlZWEyYzkwYTdmOTgxNmMzOGYwMTUifQ.VSUo52PYOUzS60NR6jqXTw",
-        "minResolution": 0.5,
-        "maxResolution": 3800,
-        "displayInLegend": true,
-        "legendDisplayName": "Street Map",
-        "legendIcon": "https://bigmudddy.s3.us-east-2.amazonaws.com/assets/icons/streetmap.png",
-        "visible": false,
-        "opacity": 0.79,
-        "queryable": false
-      },
-      {
-        "type": "XYZ",
-        "name": "global_rivers",
-        "group": "neckar",
-        "url": "https://geo.timetochange.today/geoserver/gwc/service/tms/1.0.0/osm:global_rivers@EPSG%3A900913@png/{z}/{x}/{-y}.png",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         "minResolution": 0.1,
-        "maxResolution": 64000,
-        "displayInLegend": true,
-        "legendDisplayName": "Rivers",
-        "opacity": 0.89,
-        "visible": false
-      },
-      {
-        "type": "XYZ",
-        "name": "carto_dark",
-        "group": "neckar",
-        "url": "https://{a-d}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
-        "minResolution": 0.25,
         "maxResolution": 68000,
         "displayInLegend": true,
-        "legendDisplayName": "Dark background",
-        "opacity": 0.99,
+        "legendDisplayName": "Satellite Image",
+        "opacity": 1,
         "queryable": false,
-        "visible": false
+        "visible": true
       },
       {
         "type": "XYZ",
@@ -322,11 +309,10 @@
         "default": {
           "layers": [
             "ESRI-World-Imagery",
-            "carto_dark",
-            "global_rivers",
-            "neckar_watershed",
+            "carto_light",
             "circle_tiles",
             "osm_bright",
+            "spotlight",
             "points",
             "lines",
             "polygons",

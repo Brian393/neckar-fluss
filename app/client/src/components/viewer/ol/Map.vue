@@ -48,7 +48,6 @@
     >
       <add-post :color="color.primary" :map="map"></add-post>
     </div>
-    <!-- uncomment for spotlight message
     <div
       v-show="spotlightMessage === true && !$vuetify.breakpoint.smAndDown && !isEditingPost"
       :style="`background-color: ${color.primary}`"
@@ -56,7 +55,7 @@
       ref="spotlightControls"
     >
       {{ $t('tooltip.changeSpotlight') }}
-    </div>   -->
+    </div>
 
     <!-- Popup overlay  -->
     <overlay-popup
@@ -412,7 +411,7 @@ export default {
           layer.setVisible(this.layerVisibilityState[layer.get('name')]);
         }
         // Enable spotlight for ESRI Imagery
-        if (layer.get('name') === 'ESRI-World-Imagery2' || layer.get('name') === 'ESRI-World-Imagery3') {
+        if (layer.get('name') === 'ESRI-World-Imagery2' || layer.get('name') === 'spotlight') {
           layer.on('prerender', e => {
             this.spotlight(e);
           });
