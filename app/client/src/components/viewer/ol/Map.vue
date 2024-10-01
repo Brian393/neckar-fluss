@@ -784,7 +784,7 @@ export default {
         this.mousePosition = this.map.getEventPixel(evt.originalEvent);
         // Render is only triggered for spotlight which is visible in zoom levels below 20
         const resolutionLevel = this.map.getView().getResolution();
-        if (resolutionLevel <= 40) {
+        if (resolutionLevel <= 1) {
           this.map.render();
         }
       });
@@ -830,7 +830,7 @@ export default {
       // for using the spotlights should be shown based on zoom level.
       this.map.on('moveend', () => {
         const resolutionLevel = this.map.getView().getResolution();
-        if (resolutionLevel <= 2) {
+        if (resolutionLevel <= 1) {
           this.spotlightMessage = true;
         } else {
           this.spotlightMessage = false;
