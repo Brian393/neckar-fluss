@@ -88,7 +88,7 @@
             "queryable": false,
             "visible": true
           },
-      {
+          {
             "type": "XYZ",
             "name": "neckar-streets",
             "group": "background",
