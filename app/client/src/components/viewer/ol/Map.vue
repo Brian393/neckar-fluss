@@ -251,7 +251,7 @@ export default {
       getInfoResult: [],
       radius: 160,
       mousePosition: undefined,
-      spotlightMessage: false,
+      spotlightMessage: this.$appConfig?.spotlightMessage?.isVisible || false,
       lightBoxImages: [],
       progressLoading: {
         message: 'Fetching Corporate Network',
@@ -368,7 +368,6 @@ export default {
     // Create layers from config and add them to map
     me.resetMap();
     me.createLayers();
-    me.createHtmlPostLayer();
     // Event bus setup for managing interactions
     EventBus.$on('ol-interaction-activated', startedInteraction => {
       me.activeInteractions.push(startedInteraction);
@@ -400,7 +399,7 @@ export default {
       // World Overlay Layer and selected features layer for corporate network
       me.createWorldExtentOverlayLayer();
       me.createSelectedCorpNetworkLayer();
-
+      // Create layers from config
       this.$appConfig.map.layers.forEach(lConf => {
         const layerIndex = visibleLayers.indexOf(lConf.name);
         if (layerIndex === -1) return;
@@ -423,6 +422,8 @@ export default {
           me.setLayer(layer);
         }
       });
+      const backgroundColor = this.visibleGroup?.backgroundColor || '#ffffff';
+      document.documentElement.style.setProperty('--viewer-background-color', backgroundColor);
     },
     resetLayersVisibility() {
       const visibleLayers = this.visibleGroup.layers;
@@ -435,10 +436,6 @@ export default {
           }
         });
       });
-    },
-    createHtmlPostLayer() {
-      const layer = LayerFactory.getInstance(this.htmlPostLayerConf);
-      this.setPersistentLayer(layer);
     },
     /**
      * Creates a layer to visualize selected GetInfo features.
@@ -1347,9 +1344,7 @@ export default {
       activeLayerGroup: 'activeLayerGroup',
       popupInfo: 'popupInfo',
       splittedEntities: 'splittedEntities',
-      htmlPostLayerConf: 'htmlPostLayerConf',
       geoserverWorkspace: 'geoserverWorkspace',
-      persistentLayers: 'persistentLayers',
       mobilePanelState: 'mobilePanelState',
       visibleGroup: 'visibleGroup',
       isTranslating: 'isTranslating',
@@ -1443,9 +1438,6 @@ export default {
       EventBus.$emit('group-changed');
       EventBus.$emit('clearEditHtml');
 
-      if (this.persistentLayers.html_posts) {
-        this.persistentLayers.html_posts.getSource().refresh();
-      }
       // Reset fromEvent to false
       setTimeout(() => {
         this.$route.meta.fromEvent = false;

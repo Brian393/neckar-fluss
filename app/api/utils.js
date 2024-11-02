@@ -3,7 +3,7 @@ const axios = require('axios');
 const translator = new deepl.Translator(process.env.DEEPL_API_KEY);
 const sequelize = require("./db.js");
 
-const langVariants = { 
+const langVariants = {
   "en": "en-US",
   "es": "es",
   "de": "de"

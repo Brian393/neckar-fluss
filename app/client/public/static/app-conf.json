@@ -13,7 +13,9 @@
     "projectWebsite": "",
     "color": {
       "primary": "#382a8c",
-      "secondary": "#2a8c38"
+      "secondary": "#2a8c38",
+      "link": "#ff0000",
+      "mapLink": "#7C2CA3"
     },
     "font": {
       "url": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap",
@@ -35,7 +37,10 @@
     "navbar": {
       "dropdownMenu": false
     },
-    "customNavigationScheme": "1"
+    "customNavigationScheme": "1",
+    "spotlightMessage": {
+      "isVisible": true
+    }
   },
   "map": {
     "projectionCode": "EPSG:3857",
@@ -170,6 +175,31 @@
       },
       {
         "type": "VECTOR",
+        "name": "html_posts",
+        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:html_posts&outputFormat=application/json&srsname=EPSG:3857",
+        "queryable": true,
+        "displayInLegend": true,
+        "legendDisplayName": {
+          "en": "Posts",
+          "es": "Publicaciones",
+          "pt": "Publicações"
+        },
+        "format": "GeoJSON",
+        "visible": true,
+        "zIndex": 1002,
+        "minResolution": 0.5,
+        "maxResolution": 64000,
+        "label": null,
+        "hoverable": true,
+        "canEdit": false,
+        "style": {
+          "styleRef": "htmlLayerStyle",
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "#000000"
+        }
+      },
+      {
+        "type": "VECTOR",
         "name": "points",
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:points&outputFormat=application/json&srsname=EPSG:3857",
         "group": "media",
@@ -266,6 +296,38 @@
       },
       {
         "type": "VECTOR",
+        "name": "experimental",
+        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:experimental&outputFormat=application/json&srsname=EPSG:3857",
+        "group": "media",
+        "queryable": true,
+        "format": "GeoJSON",
+        "visible": true,
+        "displayInLegend": true,
+        "displaySidebarInfo": true,
+        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/polygon.png",
+        "legendDisplayName": {
+          "en": "experimental",
+          "es": "experimental",
+          "pt": "experimental"
+        },
+        "zIndex": 1000,
+        "minResolution": 1,
+        "maxResolution": 64000,
+        "opacity": 1,
+        "label": null,
+        "hoverable": true,
+        "style": {
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "#000000",
+          "stylePropFnRef": {
+            "strokeColor": "strokeColor",
+            "fillColor": "fillColor"
+          },
+          "strokeWidth": 3
+        }
+      },
+      {
+        "type": "VECTOR",
         "name": "photos",
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:photos&outputFormat=application/json&srsname=EPSG:3857",
         "group": "media",
@@ -339,6 +401,7 @@
           "mobileCenter": [9.136, 48.776],
           "mobileResolution": 80,
           "minResolution": 0.1,
+          "backgroundColor": "#f5efe9",
           "maxResolution": 64000
         },
         "local": {
@@ -347,7 +410,8 @@
           "resolution": 2000,
           "mobileResolution": 16000,
           "minResolution": 0,
-          "maxResolution": 64000
+          "maxResolution": 64000,
+          "backgroundColor": "red"
         },
         "global": {
           "layers": [],
