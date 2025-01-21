@@ -56,7 +56,7 @@ axios
 
 // App Configuration
 // eslint-disable-next-line no-undef
- // fetch('./static/app-conf.json')
+// fetch('./static/app-conf.json')
 fetch('https://neckar-fluss.s3.eu-north-1.amazonaws.com/assets/settings/app-conf.json')
   .then(response => {
     if (response.status !== 200) {
