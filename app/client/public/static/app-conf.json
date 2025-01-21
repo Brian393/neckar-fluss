@@ -6,9 +6,9 @@
       "es": "Río Neckar"
     },
     "tagline": {
-      "en": "let it flow...",
-      "es": "Pasados y Futuros",
-      "de": "Vergangenheit und Zukunft"
+      "en": "A SINGLE RIVERBODY",
+      "es": "A SINGLE RIVERBODY",
+      "de": "A SINGLE RIVERBODY"
     },
     "projectWebsite": "",
     "color": {
@@ -157,9 +157,9 @@
         "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         "minResolution": 0.1,
         "maxResolution": 68000,
-        "displayInLegend": false,
+        "displayInLegend": true,
         "legendDisplayName": "Satellite Image",
-        "opacity": 0.9,
+        "opacity": 1,
         "queryable": false,
         "visible": false
       },
@@ -331,7 +331,7 @@
             "html_posts"
           ],
           "center": [9.082, 48.84],
-          "resolution": 340,
+          "resolution": 300,
           "mobileCenter": [9.175, 48.844],
           "mobileResolution": 650,
           "minResolution": 0.1,
