@@ -12,8 +12,8 @@
     },
     "projectWebsite": "",
     "color": {
-      "primary": "#382a8c",
-      "secondary": "#2a8c38"
+      "primary": "#474fc1",
+      "secondary": "#ca3eca"
     },
     "font": {
       "url": "https://fonts.googleapis.com/css2?family=Merriweather&display=swap",
@@ -29,13 +29,16 @@
     },
     "sideBar": {
       "isVisible": true,
-      "backgroundColor": "#000000",
-      "textColor": "white"
+      "backgroundColor": "#9acda5",
+      "textColor": "black"
     },
     "navbar": {
       "dropdownMenu": false
     },
-    "customNavigationScheme": "1"
+    "customNavigationScheme": "1",
+    "spotlightMessage": {
+      "isVisible": false
+    }
   },
   "map": {
     "projectionCode": "EPSG:3857",
@@ -44,8 +47,7 @@
     "zoom": 1,
     "geoserverWorkspace": "workspace1",
     "resolutions": [
-      156543.03, 78271.52, 39135.76, 19567.88, 9783.94, 4891.97, 2445.98, 1222.99, 611.5, 305.75, 152.87, 76.437,
-      38.219, 19.109, 9.5546, 4.7773, 2.3887, 1.1943, 0.5972, 0.299, 0.149
+      156543.03, 78271.52, 39135.76, 19567.88, 9783.94, 4891.97, 2445.98, 1222.99, 611.5, 305.75, 152.87, 76.437, 38.219, 19.109, 9.5546, 4.7773, 2.3887, 1.1943, 0.5972, 0.299, 0.149
     ],
     "center": [0, 0],
     "minResolution": 0.8,
@@ -53,16 +55,30 @@
     "layers": [
       {
         "type": "XYZ",
+        "name": "world_topo",
+        "group": "neckar",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+        "minResolution": 0.5,
+        "maxResolution": 64000,
+        "displayInLegend": true,
+        "legendDisplayName": "topo",
+        "zIndex": 1000,
+        "opacity": 0.99,
+        "visible": false,
+        "updatewhileanimating": true
+      },
+      {
+        "type": "XYZ",
         "name": "carto_light",
         "group": "neckar",
-        "url": "https://{a-d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        "url": "https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
         "minResolution": 1,
         "maxResolution": 64000,
         "zIndex": 1000,
         "displayInLegend": true,
         "legendDisplayName": "Basemap",
         "opacity": 1,
-        "visible": false
+        "visible": true
       },
       {
         "type": "XYZ",
@@ -140,7 +156,7 @@
         "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         "minResolution": 0.1,
         "maxResolution": 68000,
-        "displayInLegend": true,
+        "displayInLegend": false,
         "legendDisplayName": "Satellite Image",
         "opacity": 0.9,
         "queryable": false,
@@ -159,7 +175,7 @@
           "de": "Punkte"
         },
         "visible": true,
-        "displayInLegend": true,
+        "displayInLegend": false,
         "displaySidebarInfo": false,
         "zIndex": 1000,
         "minResolution": 0.1,
@@ -192,7 +208,7 @@
         },
         "format": "GeoJSON",
         "visible": true,
-        "displayInLegend": true,
+        "displayInLegend": false,
         "displaySidebarInfo": true,
         "zIndex": 1000,
         "minResolution": 0.1,
@@ -218,7 +234,7 @@
         "queryable": true,
         "format": "GeoJSON",
         "visible": true,
-        "displayInLegend": true,
+        "displayInLegend": false,
         "displaySidebarInfo": true,
         "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/polygon.png",
         "legendDisplayName": {
@@ -248,7 +264,7 @@
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:photos&outputFormat=application/json&srsname=EPSG:3857",
         "group": "neckar",
         "queryable": true,
-        "displayInLegend": true,
+        "displayInLegend": false,
         "displaySidebarInfo": true,
         "legendDisplayName": {
           "en": "Photos",
@@ -275,7 +291,7 @@
         "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:videos&outputFormat=application/json&srsname=EPSG:3857",
         "group": "neckar",
         "queryable": true,
-        "displayInLegend": true,
+        "displayInLegend": false,
         "displaySidebarInfo": true,
         "legendDisplayName": {
           "en": "Videos",
@@ -310,8 +326,8 @@
             "lines",
             "photos",
             "videos",
-            "html_posts",
-            "neckar-streets"
+            "neckar-streets",
+            "html_posts"
           ],
           "center": [9.082, 48.84],
           "resolution": 340,
@@ -319,7 +335,7 @@
           "mobileResolution": 650,
           "minResolution": 0.1,
           "maxResolution": 64000,
-          "backgroundColor": "#9ca7c5"
+          "backgroundColor": "#fbfbfb"
         },
         "local": {
           "layers": [],
